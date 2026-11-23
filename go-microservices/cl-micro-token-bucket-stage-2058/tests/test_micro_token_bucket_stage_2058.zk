@@ -1,0 +1,12 @@
+// cl-micro-token-bucket-stage-2058: Test Suite
+import "../mtb_2058.zk"
+
+fn test_run():
+    res := token_bucket_refill_2058(5.0, 10.0, 2.0, 1.0)
+    diff := res - 27.5800
+    if diff < 0.0: diff = 0.0 - diff
+    if diff > 0.01: sys_exit(1)
+
+fn main():
+    test_run()
+    print("✓ All tests passed for cl-micro-token-bucket-stage-2058!")

@@ -1,0 +1,12 @@
+// cl-micro-token-bucket-stage-4067: Test Suite
+import "../mtb_4067.zk"
+
+fn test_run():
+    res := token_bucket_refill_4067(5.0, 10.0, 2.0, 1.0)
+    diff := res - 47.6700
+    if diff < 0.0: diff = 0.0 - diff
+    if diff > 0.01: sys_exit(1)
+
+fn main():
+    test_run()
+    print("✓ All tests passed for cl-micro-token-bucket-stage-4067!")
